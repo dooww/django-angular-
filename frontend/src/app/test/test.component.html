@@ -7,27 +7,30 @@
             </div>
 
             <div class="form-group">
-                <input required maxlength="30" [(ngModel)]= "applicationModel.firstname" [ngModelOptions]="{standalone: true}" type="text" required minlength="2" class="form-control item" id="firstname" placeholder="firstname">
+                <input #firstname="ngModel" required maxlength="30" [(ngModel)]= "applicationModel.firstname"  [class.is-invalid]="firstname.invalid && firstname.touched" [ngModelOptions]="{standalone: true}" type="text" required minlength="2" class="form-control item" id="firstname" placeholder="firstname">
             </div>
 
             <div class="form-group">
-                <input required maxlength="30" ngModel [(ngModel)]="applicationModel.lastname" [ngModelOptions]="{standalone: true}" type="text" class="form-control item" id="lastname" placeholder="lastname">
+                <input #lastname="ngModel" required maxlength="30" ngModel [(ngModel)]="applicationModel.lastname" [class.is-invalid]="lastname.invalid && lastname.touched" [ngModelOptions]="{standalone: true}" type="text" class="form-control item" id="lastname" placeholder="lastname">
+            </div>
+            
+            <div class="form-group" >
+                <input #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="applicationModel.email" [class.is-invalid]="email.invalid && email.touched" [ngModelOptions]="{standalone: true}" type="text" maxlength="200" class="form-control item" id="email" placeholder="Email">
+                <small class="text-danger"*ngif="email.valid && email.untouched">this email is not valid</small>
+            </div>
+                
+                <div  class="form-group">
+                    <input #phonenumber="ngModel" required pattern="[0-9]{8}"  type="text" class="form-control item" [(ngModel)]="applicationModel.phonenumber" [class.is-invalid]="phonenumber.invalid && phonenumber.touched"[ngModelOptions]="{standalone: true}" placeholder="Phone Number">
+                    <small class="text-danger" *ngif="phonenumber.valid && phonenumber.untouched">this phonenumber is not valid</small>
+                </div>
+            
+
+            <div class="form-group">
+                <input  #birth_date="ngModel" required ngModel [(ngModel)]='applicationModel.birth_date'[ngModelOptions]="{standalone: true}" type="text" onfocus="(this.type='date')" class="form-control item" id="birth-date" placeholder="Birth Date">
             </div>
 
             <div class="form-group">
-                <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="applicationModel.email" [ngModelOptions]="{standalone: true}" type="text" maxlength="200" class="form-control item" id="email" placeholder="Email">
-            </div>
-
-            <div class="form-group">
-                <input required pattern="[0-9]{8}"  type="text" class="form-control item" [(ngModel)]="applicationModel.phonenumber" [ngModelOptions]="{standalone: true}" placeholder="Phone Number">
-            </div>
-
-            <div class="form-group">
-                <input required ngModel [(ngModel)]='applicationModel.birth_date'[ngModelOptions]="{standalone: true}" type="text" onfocus="(this.type='date')" class="form-control item" id="birth-date" placeholder="Birth Date">
-            </div>
-
-            <div class="form-group">
-                <input required type="number" class="form-control item" [(ngModel)]="applicationModel.expiriance"[ngModelOptions]="{standalone: true}" placeholder="Number of Years of Experience">
+                <input  required type="number" class="form-control item" [(ngModel)]="applicationModel.expiriance"[ngModelOptions]="{standalone: true}" placeholder="Number of Years of Experience">
             </div>
 
 
@@ -68,12 +71,12 @@
                   <select  class="form-control item"
                   [(ngModel)]="applicationModel.availability" id="inlineFormCustomSelect" [ngModelOptions]="{standalone: true}">
                     <option selected required>0</option>
-                    <option value="2">1</option>
-                    <option value="3">2</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
                     <option value="3">3</option>
-                    <option value="3">4</option>
-                    <option value="3">5</option>
-                    <option value="3">6</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                   </select>
                 </div>
                 <br>
