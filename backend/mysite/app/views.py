@@ -14,7 +14,12 @@ from django.db.models.functions import Length, Upper
 from django_filters.rest_framework import DjangoFilterBackend
 # from mysite.settings import EMAIL_HOST_USER
 # from django.core.mail import send_mail
+from keras.models import load_model
 
+
+def insult_recognition(message):
+    model = load_model('../model.h5')
+    return model.predict(message)
 
 
 
@@ -43,18 +48,12 @@ class  CondidatViewSet(viewsets.ModelViewSet):
     queryset=Condidat.objects.all().order_by("first_name","last_name","e_mail")
     serializer_class=CondidatSerializer
 
+    # def create_sendmail(self, request):
+    #     self.create(request)
+    #     request.send_mail()
+    #
 
-    #sending mail code
-    # try:
-    #     {
-    #     sub = queryset.get_email()
-    #     subject = 'applying for a job in infinity manegment'
-    #     message = '  your application is in process'
-    #     recepient = str(sub['Email'].value())
-    #     send_mail(subject,
-    #         message, EMAIL_HOST_USER, [recepient], fail_silently = False)}
-    # else :
-    #     pass
+
 
 
 
