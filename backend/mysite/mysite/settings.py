@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
     'rest_framework',
-    'django_mail_admin',
     'django_filters',
     'mysite'
 ]
@@ -87,10 +86,6 @@ DATABASES = {
     }
 }
 
-DJANGO_MAIL_ADMIN = {
-'BATCH_SIZE': 1000,
-'LOG_LEVEL': 1,
-}
 
 
 
@@ -118,12 +113,13 @@ DJANGO_MAIL_ADMIN = {
 
 
 # #DataFlair
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mzahhd@gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+# EMAIL_BACKEND =
+# ‘django.core.mail.backends.smtp.EmailBackend’
+# EMAIL_HOST = ‘smtp.gmail.com’
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
 # EMAIL_HOST_USER = ‘your_account@gmail.com’
-EMAIL_HOST_PASSWORD = '**********'
+# EMAIL_HOST_PASSWORD = ‘your account’s password’
 
 
 

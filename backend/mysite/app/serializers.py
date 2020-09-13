@@ -10,4 +10,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class CondidatSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Condidat
-        fields=['pk','first_name','last_name','birthday','cv','phone_numbr','e_mail','field','message','availablity']
+        fields=['pk','first_name','last_name','birthday','cv','phone_numbr','e_mail']
