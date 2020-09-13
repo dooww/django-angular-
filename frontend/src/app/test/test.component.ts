@@ -26,14 +26,25 @@ export class TestComponent implements OnInit {
 
 
   submitted=false;
-  applicationModel= new Application('','','','',null,'',0,'',null)
+  applicationModel= new Application('','','','',null,'',null,'',null)
+  verification(){
+    
+//    this._applyservice.verify(this.message)
+//  .subscribe(
+//    data => console.log('success',data),
+//    error => console.error()
+//    )
+//    this.submitted=true
+
+
+  }
   onSubmit(){
-    this._applyservice.apply(this.applicationModel)
-    .subscribe(
-    data => console.log('success',data),
-    error => console.error()
-    )
-    this.submitted=true
+//    this._applyservice.apply(this.applicationModel)
+//  .subscribe(
+//    data => console.log('success',data),
+//    error => console.error()
+//    )
+//    this.submitted=true
     
   }
 

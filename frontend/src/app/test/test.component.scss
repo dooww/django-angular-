@@ -10,10 +10,10 @@
 
 
 
-input:invalid {
+input:invalid,textarea,select {
     box-shadow: 0 0 5px 1px gray;
   }
-  input:valid {
+  input:valid{
     box-shadow: 0 0 5px 1px blue;
   }
 
